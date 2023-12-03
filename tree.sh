@@ -33,7 +33,7 @@ vm_stat
 echo -e 'MEMORY SIZE:'
 pagesize
 echo -e 'ADDITIONALS:'
-system_profiler SPSoftwareDataType SPHardwareDataType SPNetworkDataType  SPBluetoothDataType SPStartupItemDataType SPStorageDataType SPSecureElementDataType 
+system_profiler SPSoftwareDataType SPHardwareDataType   SPBluetoothDataType SPStartupItemDataType SPStorageDataType SPSecureElementDataType 
 
 
 
