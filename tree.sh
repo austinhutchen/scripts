@@ -2,9 +2,9 @@
 echo "Today is " `date`
 echo "YOUR OPTIONS: "
 
-echo -e "~~~~~~~ (1) SEARCH FROM ROOT: ~~~~~~~ \n"
+echo -e "~~~~~~~ (1) SEARCH FROM ROOT: ~~~~~~~ "
 ls $IN
-echo -e "~~~~~~(2) SEARCH FROM HOME: ~~~~~~ \n"
+echo -e "~~~~~~(2) SEARCH FROM HOME: ~~~~~~ "
 ls $HOME
 echo -e "~~~~~~(3) SEARCH FOR FILE: ~~~~~~ \n"
 read -p "Please enter the number of your first choice, and the name of the item to search {FORMAT: 1|2 Directory OR 3 filename} " the_path
