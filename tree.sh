@@ -27,7 +27,9 @@ then
 fi
 echo -e "\n DONE ... CLEANING UP! \n"
 echo -e "SYSTEM INFO:\n"
-exec system_profiler SPSoftwareDataType SPHardwareDataType SPNetworkDataType SPInstallHistoryDataType  
+vm_stat 
+system_profiler -listDataTypes SPSoftwareDataType SPHardwareDataType SPNetworkDataType  
+
 
 #LISTS THE FILE TREE FOUND AT INPUT DIRECTORY
 #BEST TO BE RUN WITH SUDO E.G. SUDO ./tree.sh
