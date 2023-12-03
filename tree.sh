@@ -27,7 +27,8 @@ then
 fi
 echo -e "\n DONE ... CLEANING UP! \n"
 echo -e "SYSTEM INFO:\n"
-vm_stat 
+ps -A -o %cpu,%mem | awk '{ cpu += $1; mem += $2} END {print "CPU: "cpu"% MEM: "mem"%"}'
+echo -e '\n'
 system_profiler -listDataTypes SPSoftwareDataType SPHardwareDataType SPNetworkDataType  
 
 
