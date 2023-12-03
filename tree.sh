@@ -28,12 +28,12 @@ fi
 echo -e "\n DONE ... CLEANING UP! \n"
 echo -e "SYSTEM INFO:\n"
 ps -A -o %cpu,%mem | awk '{ cpu += $1; mem += $2} END {print "CPU: "cpu"% MEM: "mem"%"}'
-echo -e 'PAGE TABLE INFO\n'
+echo -e 'PAGE TABLE INFO:'
 vm_stat
-echo -e 'MEMORY SIZE:\n'
+echo -e 'MEMORY SIZE:'
 pagesize
-echo -e 'ADDITIONALS:\n'
-system_profiler SPSoftwareDataType SPHardwareDataType SPNetworkDataType  SPBluetoothDataType SPStartupItemDataType SPStorageDataType
+echo -e 'ADDITIONALS:'
+system_profiler SPSoftwareDataType SPHardwareDataType SPNetworkDataType  SPBluetoothDataType SPStartupItemDataType SPStorageDataType SPSecureElementDataType 
 
 
 
