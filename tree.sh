@@ -28,8 +28,13 @@ fi
 echo -e "\n DONE ... CLEANING UP! \n"
 echo -e "SYSTEM INFO:\n"
 ps -A -o %cpu,%mem | awk '{ cpu += $1; mem += $2} END {print "CPU: "cpu"% MEM: "mem"%"}'
-echo -e '\n'
-system_profiler -listDataTypes SPSoftwareDataType SPHardwareDataType SPNetworkDataType  
+echo -e 'PAGE TABLE INFO\n'
+vm_stat
+echo -e 'MEMORY SIZE:\n'
+pagesize
+echo -e 'ADDITIONALS:\n'
+system_profiler SPSoftwareDataType SPHardwareDataType SPNetworkDataType  SPBluetoothDataType SPStartupItemDataType SPStorageDataType
+
 
 
 #LISTS THE FILE TREE FOUND AT INPUT DIRECTORY
