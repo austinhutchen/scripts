@@ -9,7 +9,7 @@ echo -e "~~~~~~~         END               ~~~~~~~ \n"
 echo -e "~~~~~~(2) SEARCH FROM HOME: ~~~~~~ \n"
 ls $HOME
 echo -e "~~~~~~~         END               ~~~~~~~ \n"
-read -p "Please enter the number of your first choice, and the name of the directory to search. FORMAT: 1 Library " the_path
+read -p "Please enter the number of your first choice, and the name of the directory to search. {INPUT FORMAT: 1 Library} " the_path
 NUMBER=$(echo $the_path | sed 's/[^0-9]*//g')
 echo -e "YOU CHOSE ${NUMBER} \n"
 if [ $NUMBER = 1 ]
