@@ -6,5 +6,5 @@ IN="/"
 read the_path
 IN+=$the_path
 
-find $IN | sed -e "s/[^-][^\/]*\// |/g" -e "s/|\([^ ]\)/|-\1/"
+find . | sort | sed -e "s/[^-][^\/]*\//  |/g" -e "s/|\([^ ]\)/|-\1/"
 echo "\n DONE ... CLEANING UP!"
