@@ -1,5 +1,8 @@
 #!/bin/bash
-NAME="Austin Hutchen"
-i=0
-while(i<8)
-echo "My name is ${NAME} and I am cool"
+echo "Today is " `date`
+
+echo -e "\nenter the path to directory"
+read the_path
+
+echo -e "\n you path has the following files and folders: "
+ls $the_path
