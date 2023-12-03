@@ -1,6 +1,7 @@
 #!/bin/bash
 echo "Today is " `date`
-IN="/"
+echo "YOUR OPTIONS: "
+
 echo -e "~~~~~~~ (1) SEARCH FROM ROOT: ~~~~~~~ \n"
 ls $IN
 echo -e "~~~~~~(2) SEARCH FROM HOME: ~~~~~~ \n"
@@ -11,17 +12,22 @@ NUMBER=$(echo $the_path | sed 's/[^0-9]*//g')
 echo -e "YOU CHOSE ${NUMBER} \n"
 if [ $NUMBER = 1 ]
 then
+  echo -e "COMMENCING $IN SEARCH.... \n"
   find  $IN | sed -e "s/[^-][^\/]*\//  |/g" -e "s/|\([^ ]\)/|-\1/"
 fi
 if [ $NUMBER = 2 ]
 then
+  echo -e "COMMENCING $HOME SEARCH.... \n"
   find  $HOME | sed -e "s/[^-][^\/]*\//  |/g" -e "s/|\([^ ]\)/|-\1/"
   fi
 if [ $NUMBER = 3 ]
 then
   echo -e "COMMENCING SYSTEM SEARCH.... \n"
-  find / -iname 'zshrc*'
+  find / -type f -iname "napsack.cpp*"
 fi
 echo -e "\n DONE ... CLEANING UP! \n"
+echo -e "SYSTEM INFO:\n"
+exec system_profiler SPSoftwareDataType SPHardwareDataType
+
 #LISTS THE FILE TREE FOUND AT INPUT DIRECTORY
 #BEST TO BE RUN WITH SUDO E.G. SUDO ./tree.sh
