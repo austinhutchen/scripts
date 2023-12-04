@@ -1,5 +1,12 @@
 #!/bin/bash
 echo "Today is " `date`
+OS=$(uname -m) 
+case $OS in
+(amd64|x86_64) bits=64;;  
+(i386|i586|i686) bits=32;; 
+(*) bits=unknown;;         
+esac  
+echo "You have a ${bits}-bit machine."
 echo "YOUR OPTIONS: "
 
 echo -e "~~~~~~(1) SEARCH FROM ROOT: ~~~~~~ "
@@ -33,10 +40,14 @@ echo -e 'PAGE TABLE INFO:'
 vm_stat
 echo -e 'MEMORY SIZE:'
 pagesize
-echo -e 'ADDITIONALS:'
-system_profiler SPSoftwareDataType SPHardwareDataType   SPBluetoothDataType SPStartupItemDataType SPStorageDataType SPSecureElementDataType 
+CHOICE=0
+read -p "ADDITIONALS (1-Y/0-N):" CHOICE
 
-
+if [ $CHOICE = 1 ]
+then
+  system_profiler SPSoftwareDataType SPHardwareDataType   SPBluetoothDataType SPStartupItemDataType SPStorageDataType SPSecureElementDataType
+fi
+exit 1
 
 #LISTS THE FILE TREE FOUND AT INPUT DIRECTORY
 #BEST TO BE RUN WITH SUDO E.G. SUDO ./tree.sh
