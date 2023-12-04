@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Simple pingsweep
-# Allows you to see active users on a given network (NMAP SCANNER)
+# Allows you to see listening posts ports on a local network and see wireless ports on a submask. 
 #
 echo -e "YOU ARE CURRENTLY ON SUBNET @IP:"
 for name in $(ifconfig -l)
