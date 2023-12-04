@@ -28,6 +28,7 @@ fi
 echo -e "\n DONE ... CLEANING UP! \n"
 echo -e "SYSTEM INFO:\n"
 top -l 1 | grep -E "^CPU|^Phys"
+echo -e "\n"
 echo -e 'PAGE TABLE INFO:'
 vm_stat
 echo -e 'MEMORY SIZE:'
