@@ -27,7 +27,7 @@ then
 fi
 echo -e "\n DONE ... CLEANING UP! \n"
 echo -e "SYSTEM INFO:\n"
-ps -A -o %cpu,%mem | awk '{ cpu += $1; mem += $2} END {print "CPU: "cpu"% MEM: "mem"%"}'
+top -l 1 | grep -E "^CPU|^Phys"
 echo -e 'PAGE TABLE INFO:'
 vm_stat
 echo -e 'MEMORY SIZE:'
