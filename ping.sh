@@ -14,7 +14,7 @@ for IP in $(seq 100 254); do
        ping -c 2 $SUBNET.$IP
 done
 read -p "Additionals? (y/n 1/0)" PROMPT
-if [ $PROMPT = 1 ]
+if [ "$PROMPT" = "1" ]|| [ "$PROMPT" = "y" ]
 then
   exec netstat -rn
 fi
