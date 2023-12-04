@@ -171,7 +171,7 @@ Version $VERSION
         $(basename $0) --help
 
 "
-    _printPoweredBy
+    
     exit 1
 }
 
