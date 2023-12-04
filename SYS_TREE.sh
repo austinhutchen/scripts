@@ -2,11 +2,11 @@
 echo "Today is " `date`
 OS=$(uname -m) 
 case $OS in
-(amd64|x86_64) bits=64;;  
-(i386|i586|i686) bits=32;; 
-(*) bits=unknown;;         
+amd64|x86_64) bits=64;;  
+i386|i586|i686) bits=32;; 
+*) bits=unknown;;         
 esac  
-echo "You have a ${bits}-bit machine."
+echo -e "You have a ${bits}-bit machine.\n"
 echo "YOUR OPTIONS: "
 
 echo -e "~~~~~~(1) SEARCH FROM ROOT: ~~~~~~ "
