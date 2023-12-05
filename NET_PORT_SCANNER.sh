@@ -1,8 +1,7 @@
 #!/bin/bash
-
-#Simple pingsweep
+# Simple pingsweep
 # Allows you to see listening posts ports on a local network and see wireless ports on a submask.
-die() {
+finish() {
   yell "$*"
   exit 111
 }
@@ -13,14 +12,13 @@ for name in $(ifconfig -l); do
 done
 
 read -p "Please enter the subnet (first three digits in IP ADDRESS e.g. x.x.x.BLAH): " SUBNET
-for IP in $(seq 1 254); do
-  if [ $($IP % 5) = 0 ]; then
-    read -p "continue or exit pings? 1/0" PROMPT
-    if [ $PROMPT = 0 ]; then
-      $(die)
-    fi
-    ping -c 2 $SUBNET.$IP
+for IP in $(seq 248 254); do
+  read -p "continue or exit pings? 1/0" PROMPT
+  if [ "$PROMPT" = 0 ]; then
+    finish
   fi
+  ping -c 2 $SUBNET.$IP
+
 done
 read -p "Additionals? (y/n 1/0)" PROMPT
 if [ "$PROMPT" = "1" ] || [ "$PROMPT" = "y" ]; then
