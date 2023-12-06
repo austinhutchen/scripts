@@ -11,7 +11,7 @@ for name in $(ifconfig -l); do
 done
 
 read -p "Please enter the subnet (first three digits in IP ADDRESS e.g. x.x.x.BLAH): " SUBNET
-for IP in $(seq 1 254); do
+for IP in $(seq 200 254); do
   read -p "continue or exit pings? 1/0" PROMPT
   if [ "$PROMPT" = 0 ]; then
     finish
